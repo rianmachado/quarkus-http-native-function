@@ -12,9 +12,7 @@ public class CovidFunctionTest {
 
 	@Test
 	public void covidFunctionTest() {
-
 		String myJson = "{\"country\":\"south-africa\",\"month\": 12,\"year\":2020}";
-		
 		RestAssured
 		.given()
 		.body(myJson)
@@ -22,7 +20,7 @@ public class CovidFunctionTest {
 		.post("/covidFunction")
 		.then()
 		.statusCode(200)
-		.contentType("application/json").body(containsString(("Date")));
+		.contentType("application/json").body(containsString(("2020-12")));
 	}
 
 }
