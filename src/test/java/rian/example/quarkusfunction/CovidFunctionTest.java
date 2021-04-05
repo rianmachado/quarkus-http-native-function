@@ -1,4 +1,4 @@
-package rian.example.springcloudfunction;
+package rian.example.quarkusfunction;
 
 import static org.hamcrest.CoreMatchers.containsString;
 
