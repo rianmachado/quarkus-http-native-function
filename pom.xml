@@ -27,7 +27,7 @@
 		<function>quarkus</function>
 		<stagingDirectory>${project.build.directory}/azure-functions/${functionAppName}</stagingDirectory>
 		<quarkus.package.type>uber-jar</quarkus.package.type>
-		
+
 		<resources-plugin.version>3.1.0</resources-plugin.version>
 
 	</properties>
@@ -55,7 +55,7 @@
 		</dependency>
 		<dependency>
 			<groupId>io.quarkus</groupId>
-			<artifactId>quarkus-azure-functions-http</artifactId>
+			<artifactId>quarkus-funqy-amazon-lambda</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>io.smallrye.reactive</groupId>
@@ -106,104 +106,7 @@
 				</executions>
 			</plugin>
 
-			<!-- Azure -->
-			<!-- we only use azure plugin to deploy to Azure. The directory structure 
-				is set up through various plugins in this pom -->
-			<plugin>
-				<groupId>com.microsoft.azure</groupId>
-				<artifactId>azure-functions-maven-plugin</artifactId>
-				<version>${azure.functions.maven.plugin.version}</version>
-				<configuration>
-					<resourceGroup>${functionResourceGroup}</resourceGroup>
-					<appName>${functionAppName}</appName>
-					<region>${functionAppRegion}</region>
-					<runtime>
-						<!-- runtime os, could be windows, linux or docker -->
-						<os>linux</os>
-						<javaVersion>11</javaVersion>
-						<!-- for docker function, please set the following parameters -->
-						<!-- <image>[hub-user/]repo-name[:tag]</image> -->
-						<!-- <serverId></serverId> -->
-						<!-- <registryUrl></registryUrl> -->
-					</runtime>
-					<appSettings>
-						<property>
-							<name>FUNCTIONS_EXTENSION_VERSION</name>
-							<value>~3</value>
-						</property>
-					</appSettings>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-resources-plugin</artifactId>
-				<version>${resources-plugin.version}</version>
-				<executions>
-					<!-- add azure required json files to Azure staging directory -->
-					<execution>
-						<id>copy-base-azure-config</id>
-						<phase>package</phase>
-						<goals>
-							<goal>copy-resources</goal>
-						</goals>
-						<configuration>
-							<overwrite>true</overwrite>
-							<outputDirectory>${stagingDirectory}</outputDirectory>
-							<resources>
-								<resource>
-									<directory>${project.basedir}/azure-config</directory>
-									<filtering>true</filtering>
-									<includes>
-										<include>host.json</include>
-										<include>local.settings.json</include>
-									</includes>
-								</resource>
-							</resources>
-						</configuration>
-					</execution>
-					<!-- copy unpacked function.json into Azure staging directory -->
-					<execution>
-						<id>copy-function-json</id>
-						<phase>package</phase>
-						<goals>
-							<goal>copy-resources</goal>
-						</goals>
-						<configuration>
-							<overwrite>true</overwrite>
-							<outputDirectory>${stagingDirectory}/covidFunction</outputDirectory>
-							<resources>
-								<resource>
-									<directory>${project.basedir}/azure-config</directory>
-									<filtering>true</filtering>
-									<includes>
-										<include>function.json</include>
-									</includes>
-								</resource>
-							</resources>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			<!-- azure plugin wants a specific name for the jar so need to copy runner 
-				jar and rename it -->
-			<plugin>
-				<groupId>com.coderplus.maven.plugins</groupId>
-				<artifactId>copy-rename-maven-plugin</artifactId>
-				<version>1.0.1</version>
-				<executions>
-					<execution>
-						<id>rename-file</id>
-						<phase>package</phase>
-						<goals>
-							<goal>copy</goal>
-						</goals>
-						<configuration>
-							<sourceFile>${project.build.directory}/${project.artifactId}-${project.version}-runner</sourceFile>
-							<destinationFile>${stagingDirectory}/${project.artifactId}-${project.version}-runner</destinationFile>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
+
 		</plugins>
 	</build>
 	<profiles>
@@ -243,7 +146,7 @@
 			</build>
 		</profile>
 		<profile>
-			<id>image-native</id>
+			<id>native-image</id>
 			<build>
 				<plugins>
 					<plugin>
@@ -268,5 +171,32 @@
 				</plugins>
 			</build>
 		</profile>
+		<profile>
+			<id>azure-copy-executable</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>com.coderplus.maven.plugins</groupId>
+						<artifactId>copy-rename-maven-plugin</artifactId>
+						<version>1.0.1</version>
+						<executions>
+							<execution>
+								<id>rename-file</id>
+								<phase>package</phase>
+								<goals>
+									<goal>copy</goal>
+								</goals>
+								<configuration>
+									<sourceFile>${project.build.directory}/${project.artifactId}-${project.version}-runner</sourceFile>
+									<destinationFile>${functionName}/${project.artifactId}-${project.version}-runner</destinationFile>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+
 	</profiles>
 </project>
