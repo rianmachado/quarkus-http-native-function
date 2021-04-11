@@ -28,6 +28,6 @@ O objetivo do Funqy é permitir que você escreva funções entre provedores de 
 ```
 Funqy suporta o tipo reativo Smallrye Mutiny Uni como um tipo de retorno. O único requisito é que o Unideve preencher o tipo genérico.
 
-## Start da aplicação
-Após iniciar o containner Postgres(veja commando-docker.txt) execute: `mvn compile quarkus:dev`
+## Start da aplicação(Modo desenvolvimento)
+Na raiz do projeto execute: `mvn compile quarkus:dev`
 
