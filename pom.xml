@@ -19,17 +19,9 @@
 		<maven.compiler.source>11</maven.compiler.source>
 		<maven.compiler.target>11</maven.compiler.target>
 		<maven.compiler.parameters>true</maven.compiler.parameters>
-
-		<azure.functions.maven.plugin.version>1.9.1</azure.functions.maven.plugin.version>
-		<functionAppName>${project.artifactId}</functionAppName>
-		<functionAppRegion>westus</functionAppRegion>
-		<functionResourceGroup>${project.artifactId}-group</functionResourceGroup>
-		<function>quarkus</function>
-		<stagingDirectory>${project.build.directory}/azure-functions/${functionAppName}</stagingDirectory>
+		<functionAppName>ReportPandemic</functionAppName>
 		<quarkus.package.type>uber-jar</quarkus.package.type>
-
 		<resources-plugin.version>3.1.0</resources-plugin.version>
-
 	</properties>
 
 	<dependencyManagement>
@@ -142,6 +134,24 @@
 							</execution>
 						</executions>
 					</plugin>
+					<plugin>
+						<groupId>com.coderplus.maven.plugins</groupId>
+						<artifactId>copy-rename-maven-plugin</artifactId>
+						<version>1.0.1</version>
+						<executions>
+							<execution>
+								<id>rename-file</id>
+								<phase>package</phase>
+								<goals>
+									<goal>copy</goal>
+								</goals>
+								<configuration>
+									<sourceFile>${project.build.directory}/${project.artifactId}-${project.version}-runner</sourceFile>
+									<destinationFile>azure-config/${functionAppName}-runner</destinationFile>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
 				</plugins>
 			</build>
 		</profile>
@@ -188,7 +198,7 @@
 								</goals>
 								<configuration>
 									<sourceFile>${project.build.directory}/${project.artifactId}-${project.version}-runner</sourceFile>
-									<destinationFile>${functionName}/${project.artifactId}-${project.version}-runner</destinationFile>
+									<destinationFile>azure-config/${functionAppName}-runner</destinationFile>
 								</configuration>
 							</execution>
 						</executions>

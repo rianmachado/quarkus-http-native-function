@@ -1,0 +1,32 @@
+AZURE SERVICE PRINCING
+
+-- Consumption plan
+Você não precisa se preocupar com a dimensão de sua infraestrutura, dimensionamento
+ou pagamento ao não utilizar nenhum recurso.
+
+Em um plano de consumo, as instâncias de seus hosts de função são adicionadas e
+removidas dinamicamente com base na carga de trabalho de suas funções. Por exemplo, 
+ao ingerir uma grande quantidade de dados de telemetria por meio de hubs de eventos e 
+processar esses dados por meio de funções, o número de hosts de função (servidores) aumentará.
+
+
+-- App Service plan
+ Você precisa alocar recursos para suas funções explicitamente e pagar por eles, independentemente de estar executando funções ou não.
+
+Para este tipo de serviço podemos selecionar categorias como: 
+gratuíto, Básico, Padrão e Premium o que definirá a família de hardware
+
+-- Premium (Plano empresarial)
+Aloca  infra estrutura de hardware baseada em categorias como EP1, EP2 e EP3
+Nesse tipo de plano conseguimos trabalhar de forma elastica aumentando ou diminuindo nossas necessidades 
+computacionais.
+
+Referencias:
+https://www.serverlessnotes.com/docs/azure-functions-choosing-right-plan#:~:text=Consumption%20Plan%20and%20App%20Service%20Plan,-Updated%20On%2008&text=On%20a%20consumption%20plan%20instances,the%20workload%20for%20your%20functions.&text=With%20the%20App%20Service%20Plan,(hence%20no%20cold%20start).
+https://azure.microsoft.com/en-us/pricing/details/app-service/windows/
+
+https://demiliani.com/2020/12/02/moving-azure-functions-from-consumption-to-premium-plans/#:~:text=The%20Azure%20Functions%20Premium%20plan,cold%20start%2C%20and%20premium%20hardware.&text=In%20the%20Consumption%20plan%2C%20billing,execution%20time%2C%20and%20memory%20used.
+https://azure.microsoft.com/pt-br/blog/announcing-the-azure-functions-premium-plan-for-enterprise-serverless-workloads/
+
+
+

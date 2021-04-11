@@ -14,7 +14,7 @@
   },
   "customHandler": {
     "description": {
-      "defaultExecutablePath": "${project.build.finalName}-runner",
+      "defaultExecutablePath": "ReportPandemic-runner",
       "workingDirectory": "",
       "arguments": []
     },

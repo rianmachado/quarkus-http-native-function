@@ -12,7 +12,5 @@ import lombok.Setter;
 @AllArgsConstructor
 @Builder
 public class RequestDTO {
-	private String country;
-	private int month;
-	private int year;
+	private String otherInfo;
 }
