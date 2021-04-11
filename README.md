@@ -11,6 +11,13 @@ REST sobre HTTP se tornou uma maneira muito comum de escrever serviços na últi
 
 O objetivo do Funqy é permitir que você escreva funções entre provedores de forma que você possa sair do seu provedor de funções atual se, por exemplo, eles começarem a cobrar muito mais por seus serviços. Outro motivo pelo qual você pode não querer usar o Funqy é se você precisa acessar APIs específicas do ambiente da função de destino. Por exemplo, os desenvolvedores geralmente desejam acessar o Contexto da AWS no Lambda. Nesse caso, dizemos que é melhor usar a integração do Quarkus Amazon Lambda .
 
+## Pré requisitos
+* Java 11
+* Lombok
+* Conta na Azure
+* Conta na AWS
+* Docker (Para gerar executável nativo)
+
 # Mostre um exemplo
 ```java
   @Funq("ReportPandemic")
