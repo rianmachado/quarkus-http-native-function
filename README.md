@@ -40,3 +40,9 @@ Para isso, o Quarkus oferece uma maneira muito conveniente de criar um executáv
 
 `mvn clean package -Pnative -Dquarkus.native.container-build=true -Dquarkus.native.native-image-xmx=3G`
 
+## E agora?
+
+* __Visão Azure:__
+Você encontrará na pasta __azure-config__ uma estrutura pronta para trabalhar com Custom Handler, forma de trabalhar com aplicativos executáveis na Azure. Para maiotes informações acesse: [Azure Function](https://docs.microsoft.com/en-us/azure/azure-functions/create-first-function-vs-code-other?tabs=go%2Cmacos) A documentação da Microsoft irá mostrar como trabalar com executávies __GO__ mas não esqueça que ja temos um executável nativo entreguie pelo __Quarkus__
+
+* __Visão AWS:__
