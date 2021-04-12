@@ -49,7 +49,7 @@ Você encontrará na pasta __azure-config__ uma estrutura pronta para trabalhar 
 
 Antes de proceguir realize login na sua conta Azure, utilizando o comando `az login` depois execute
  `azure-config/scripts/consumption/create_all_resources.sh <seu resource group> <seu storage account> ReportPandemic brazilsouth`. Certifique que está na raiz do projeto. 
-__Os Scripts foram colaborados pelo [Daniel Garcia Lamas]https://github.com/danielamas/ :)  
+__Os Scripts foram colaborados pelo [Daniel Garcia Lamas]https://github.com/danielamas/ :)__  
 
 * __Visão AWS:__
 Através da dependência `quarkus-funqy-amazon-lambda` o __Quarkus__ vai entrgar scripts na pasta __target__ para que possa realizar o deploy do executável na AWS. Para maiores informações acesse: Deploy to AWS Lambda Custom (native) Runtime(https://quarkus.io/guides/amazon-lambda)
