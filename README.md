@@ -16,6 +16,8 @@ O objetivo do Funqy é permitir que você escreva funções entre provedores de 
 * Lombok
 * Conta na Azure
 * Conta na AWS
+* Az CLI
+* AWS CLI
 * Docker (Para gerar executável nativo)
 
 # Mostre um exemplo
@@ -49,3 +51,8 @@ Antes de proceguir realize login na sua conta Azure, utilizando o comando `az lo
  `azure-config/scripts/consumption/create_all_resources.sh <seu resource group> <seu storage account> ReportPandemic brazilsouth`. Certifique que está na raiz do projeto. 
 
 * __Visão AWS:__
+Através da dependência `quarkus-funqy-amazon-lambda` o __Quarkus__ vai entrgar scripts na pasta __target__ para que possa realizar o deploy do executável na AWS. Para maiores informações acesse: Deploy to AWS Lambda Custom (native) Runtime(https://quarkus.io/guides/amazon-lambda)
+Antes de proceguir realize login na sua conta AWS, acesse o diretório __target__ e execute `sh target/manage.sh native create`
+
+
+
