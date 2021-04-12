@@ -48,8 +48,9 @@ Para isso, o Quarkus oferece uma maneira muito conveniente de criar um executáv
 Você encontrará na pasta __azure-config__ uma estrutura pronta para trabalhar com Custom Handler, forma de trabalhar com aplicativos executáveis na Azure. Para maiotes informações acesse: [Azure Function](https://docs.microsoft.com/en-us/azure/azure-functions/create-first-function-vs-code-other?tabs=go%2Cmacos) A documentação da Microsoft irá mostrar como trabalar com executávies __GO__ mas não esqueça que ja temos um executável nativo entreguie pelo __Quarkus__. Não esqueça também de conhecer os planos da Microsoft como por exemplo, __consumption e consumption__ mas para facilitar sua vida temos alguns scripts prontos para que possa testar nosso exemplo.
 
 Antes de proceguir realize login na sua conta Azure, utilizando o comando `az login` depois execute
- `azure-config/scripts/consumption/create_all_resources.sh <seu resource group> <seu storage account> ReportPandemic brazilsouth`. Certifique que está na raiz do projeto. 
-__Os Scripts foram colaborados pelo [Daniel Garcia Lamas]https://github.com/danielamas/ :)__  
+ `azure-config/scripts/consumption/create_all_resources.sh <seu resource group> <seu storage account> ReportPandemic brazilsouth`. Certifique que está na raiz do projeto.
+ 
+__Os Scripts tiveram a colaboração do [Daniel Garcia Lamas]https://github.com/danielamas/ :)__  
 
 * __Visão AWS:__
 Através da dependência `quarkus-funqy-amazon-lambda` o __Quarkus__ vai entrgar scripts na pasta __target__ para que possa realizar o deploy do executável na AWS. Para maiores informações acesse: Deploy to AWS Lambda Custom (native) Runtime(https://quarkus.io/guides/amazon-lambda)
