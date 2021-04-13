@@ -66,7 +66,6 @@ function create_functionapp() {
   --runtime custom \
   --functions-version 3 \
   --disable-app-insights false \
-  --tags channel=ARS cia=BHC cost_center=CC-ARS description="ARS applications" product=ARS sigla=ARS \
   --debug
 
   if [ $? != 0 ]; then
