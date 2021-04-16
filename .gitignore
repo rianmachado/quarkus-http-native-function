@@ -29,3 +29,5 @@ target
 # IntelliJ
 .idea/
 *.iml
+
+azure-config/*runner
