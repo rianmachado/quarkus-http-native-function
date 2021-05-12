@@ -3,7 +3,6 @@ package rian.example.quarkusfunction;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
@@ -20,8 +19,6 @@ import io.vertx.mutiny.core.Vertx;
 import io.vertx.mutiny.ext.web.client.WebClient;
 import rian.example.quarkusfunction.dto.PandemicDetailsDTO;
 import rian.example.quarkusfunction.dto.PandemicResponseDTO;
-import rian.example.quarkusfunction.dto.RequestDTO;
-import rian.example.quarkusfunction.dto.ResponseDTO;
 
 public class PandemicFunction {
 
@@ -50,7 +47,7 @@ public class PandemicFunction {
 				new WebClientOptions().setDefaultHost(url).setDefaultPort(443).setSsl(true).setTrustAll(true));
 	}
 
-	@Funq("ReportPandemicDemo")
+	@Funq("ReportPandemic")
 	public Uni<PandemicResponseDTO> reportPandemicDemo(Map<String, String> request) {
 
 		List<PandemicDetailsDTO> list = new ArrayList<>();
@@ -77,12 +74,6 @@ public class PandemicFunction {
 			return Uni.createFrom().item(PandemicResponseDTO.builder().reportTitle("Internal Function Error").build());
 		}
 
-	}
-
-	@Funq("ReportPandemic")
-	public Uni<ResponseDTO> reportPandemic(RequestDTO request) {
-		return Uni.createFrom().item(
-				ResponseDTO.builder().otherInfo(request.getOtherInfo()).guid(UUID.randomUUID().toString()).build());
 	}
 
 }

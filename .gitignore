@@ -30,4 +30,10 @@ target
 .idea/
 *.iml
 
+.vscode/
+azure-config/!.vscode/settings.json
+azure-config/!.vscode/tasks.json
+azure-config/!.vscode/launch.json
+azure-config/!.vscode/extensions.json
+
 azure-config/*runner
