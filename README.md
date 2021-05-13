@@ -49,7 +49,7 @@ A documentação da Microsoft irá mostrar um exemplo em __GO__ mas não esqueç
 Aconselho você conhecer os planos da Microsoft como por exemplo, __consumption e premium__. Isso vai te ajudar a escolher estratégias referente a cold start. Nosso exemplo oferece alguns scripts Azure para facilitar a vida.
 
 Antes de proceguir realize login na sua conta Azure, utilizando o comando `az login` depois execute
- `azure-config/scripts/consumption/create_all_resources.sh <seu resource group> <seu storage account> ReportPandemic brazilsouth`. Certifique que está na raiz do projeto.
+ `azure-config/scripts-azure-service-plan/consumption/create_all_resources.sh <seu resource group> <seu storage account> ReportPandemic brazilsouth`. Certifique que está na raiz do projeto.
  
 Os Scripts tiveram a colaboração do Daniel Garcia Lamas __(https://github.com/danielamas)__  
 
