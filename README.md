@@ -2,7 +2,7 @@
 
 
 # QUARKUS NATIVE - FUNQY
-Funqy faz parte da estratégia sem servidor oferecida pelo Quarkus que visa fornecer uma API Java portátil para escrever funções implantáveis ​​em vários ambientes FaaS, como AWS Lambda, Azure Functions, Knative e Knative Events (Cloud Events). Também pode ser usado como um serviço autônomo.
+Funqy faz parte da estratégia sem servidor oferecida pelo Quarkus, fornecer uma API Java portátil para escrever funções implantáveis ​​em vários ambientes FaaS, como AWS Lambda, Azure Functions, Knative e Knative Events (Cloud Events). Também pode ser usado como um serviço autônomo.
 
 
 # Devo usar o Funqy?
