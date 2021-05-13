@@ -57,5 +57,10 @@ Os Scripts tiveram a colaboração do Daniel Garcia Lamas __(https://github.com/
 Através da dependência `quarkus-funqy-amazon-lambda` o __Quarkus__ vai entrgar scripts na pasta __target__ para que possa realizar o deploy do executável na AWS. Para maiores informações acesse: Deploy to AWS Lambda Custom (native) Runtime(https://quarkus.io/guides/amazon-lambda)
 Antes de proceguir realize login na sua conta AWS, acesse o diretório __target__ e execute `sh target/manage.sh native create`
 
+* __Local__
+Você poderá empacotar o executável Linux gerado em uma imagem Docker. Assim nossa execução será sobre um container abstrído o sistema operacional. Lembre-se que nosso executável nativo foi gerado a partir de uma imagem Linux oferecida pelo Quarkus, então se tentar rodar no MacOS ou Windows não vai funcionar. Nosso projeto de exemplo fornece um Dockerfile o qual vai gerar uma imagem Docker com nossa aplicação demo.
+`docker build -f Dockerfile  -t {AQUI_SEU_REPOSITORIO_DE_IMAGENS}/native-funq-demo:v1 .`
 
+## Bom saber
+Cofigurar a GraalVM em seu sistema operacional, tem como vantagem criar executáveis e rodar no própio SO. Para maiores informações acesse [QUARKUS - BUILDING A NATIVE EXECUTABLE](https://quarkus.io/guides/building-native-image). Caso tenha a GraalVM funcionando no seu ambiente, vá até a raiz do projeto e execute `mvn package -Pnative`
 
