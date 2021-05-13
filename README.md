@@ -33,11 +33,10 @@ Funqy suporta o tipo reativo Smallrye Mutiny e Uni como um tipo de retorno.
 Na raiz do projeto execute: `mvn compile quarkus:dev`
 
 ## Gerando executável nativo
-Você não precisa descar o __java__ para ter um tempo de inicialização rápido. O Quarkus vai te ajudar, para maiores informações acesse: [QUARKUS - BUILDING A NATIVE EXECUTABLE](https://quarkus.io/guides/building-native-image#container-runtime)
+Você não precisa descar o __java__ para ter um tempo de inicialização rápido. Para maiores informações acesse: [QUARKUS - BUILDING A NATIVE EXECUTABLE](https://quarkus.io/guides/building-native-image#container-runtime)
 
-Muitas vezes, basta criar um executável Linux nativo para seu aplicativo Quarkus (por exemplo, para rodar em um ambiente em contêiner) e gostaria de evitar o problema de instalar a versão GraalVM adequada para realizar esta tarefa (por exemplo, em ambientes de CI, é uma prática comum instalar o mínimo de software possível).
 
-Para isso, o Quarkus oferece uma maneira muito conveniente de criar um executável Linux nativo, aproveitando um tempo de execução de contêiner, como Docker ou podman. A maneira mais fácil de realizar essa tarefa é executar:
+Muitas vezes, basta criar um executável Linux nativo para seu aplicativo Quarkus (por exemplo, para rodar em um ambiente em contêiner). Esses executáveis são criados a partir da GraalVM e caso queira abstrair a instalação e configuração dessa VM, o que vai simplificar ambientes de CI por exemplo, o Quarkus oferece uma maneira muito conveniente de criar um executável Linux nativo, aproveitando um tempo de execução de contêiner, como Docker ou podman. A maneira mais fácil de realizar essa tarefa é executar:
 
 `mvn clean package -Pnative -Dquarkus.native.container-build=true -Dquarkus.native.native-image-xmx=3G`
 
