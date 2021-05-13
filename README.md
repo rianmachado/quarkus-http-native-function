@@ -2,13 +2,13 @@
 
 
 # QUARKUS NATIVE - FUNQY
-Funqy faz parte da estratégia sem servidor oferecida pelo Quarkus, fornecer uma API Java portátil para escrever funções implantáveis ​​em vários ambientes FaaS, como AWS Lambda, Azure Functions, Knative e Knative Events (Cloud Events). Também pode ser usado como um serviço autônomo.
+Funqy faz parte da estratégia serveless proposta pelo Quarkus, fornecer uma API Java portátil para escrever funções implantáveis ​​em vários ambientes FaaS, como AWS Lambda, Azure Functions, Knative e Knative Events (Cloud Events). Também pode ser usado como um serviço autônomo.
 
 
 # Devo usar o Funqy?
-REST sobre HTTP se tornou uma maneira muito comum de escrever serviços na última década. É importante destacar que o Funqy HTTP não é uma substituição para REST sobre HTTP. Como o Funqy precisa trabalhar com uma variedade de protocolos e provedores de funções, ele é muito minimalista e restrito. Por exemplo, se você usar o Funqy, perderá recursos REST com controle de cache. O Quarkus oferece suporte à integração REST por meio de JAX-RS, Spring MVC, Vert.x Web e Servlet.
-
-O objetivo do Funqy é permitir que você escreva funções entre provedores de forma que possa sair do seu provedor de funções atual para outro que ofereça valores mais atrativos. Outro motivo pelo qual você vai querer usar o Funqy é se você precisa acessar APIs específicas do ambiente da função de destino. Por exemplo, eventos específicos do AWS no Lambda. Nesse caso é melhor usar a integração do Quarkus Amazon Lambda.
+REST sobre HTTP se tornou uma maneira muito comum de escrever serviços na última década. É importante destacar que o Funqy HTTP não é uma substituição para REST sobre HTTP. Como o Funqy precisa trabalhar com uma variedade de protocolos e provedores de funções, ele é muito minimalista e restrito. Por exemplo, se você usar o Funqy, perderá recursos REST com controle de cache. 
+Quarkus oferece suporte à integração REST por meio de JAX-RS, Spring MVC, Vert.x Web e Servlet.
+O objetivo do Funqy é permitir que você escreva funções de forma agnóstica, assim possibilitando sair do seu provedor de funções atual para outro que ofereça valores mais atrativos. Determinados casos você precisa acessar APIs específicas do provedor de função por exemplo, eventos específicos do AWS no Lambda. Nesse caso é melhor usar o Quarkus Amazon Lambda e não o Funqy.
 
 ## Pré requisitos
 * Java 11
