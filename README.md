@@ -39,16 +39,19 @@ Você não precisa descar o __java__ para ter um tempo de inicialização rápid
 Muitas vezes, basta criar um executável Linux nativo para seu aplicativo Quarkus (por exemplo, para rodar em um ambiente em contêiner). Esses executáveis são criados a partir da GraalVM e caso queira abstrair a instalação e configuração dessa VM, o que vai simplificar ambientes de CI por exemplo, o Quarkus oferece uma maneira muito conveniente de criar um executável Linux nativo, aproveitando um tempo de execução de contêiner, como Docker ou podman. A maneira mais fácil de realizar essa tarefa é executar:
 
 `mvn clean package -Pnative -Dquarkus.native.container-build=true -Dquarkus.native.native-image-xmx=3G`
+Após execução do comando com sucesso, teremos um executável no diretório __azure-config__
 
 ## E agora?
 
 * __Visão Azure:__
-Você encontrará na pasta __azure-config__ uma estrutura pronta para trabalhar com Custom Handler, forma de trabalhar com aplicativos executáveis na Azure. Para maiotes informações acesse: [Azure Function](https://docs.microsoft.com/en-us/azure/azure-functions/create-first-function-vs-code-other?tabs=go%2Cmacos) A documentação da Microsoft irá mostrar como trabalar com executávies __GO__ mas não esqueça que ja temos um executável nativo entreguie pelo __Quarkus__. Não esqueça também de conhecer os planos da Microsoft como por exemplo, __consumption e consumption__ mas para facilitar sua vida temos alguns scripts prontos para que possa testar nosso exemplo.
+Você encontrará na pasta __azure-config__ uma estrutura pré definida com Custom Handler, que é a forma de trabalhar com aplicativos executáveis na Azure. Para maiores informações acesse: [Azure Function](https://docs.microsoft.com/en-us/azure/azure-functions/create-first-function-vs-code-other?tabs=go%2Cmacos) 
+A documentação da Microsoft irá mostrar um exemplo em __GO__ mas não esqueça que ja temos um executável do nosso exemplo entregue pelo __Quarkus__. 
+Aconselho você conhecer os planos da Microsoft como por exemplo, __consumption e premium__. Isso vai te ajudar a escolher estratégias referente a cold start. Nosso exemplo oferece alguns scripts Azure para facilitar a vida.
 
 Antes de proceguir realize login na sua conta Azure, utilizando o comando `az login` depois execute
  `azure-config/scripts/consumption/create_all_resources.sh <seu resource group> <seu storage account> ReportPandemic brazilsouth`. Certifique que está na raiz do projeto.
  
-__Os Scripts tiveram a colaboração do [Daniel Garcia Lamas]https://github.com/danielamas/ :)__  
+__Os Scripts tiveram a colaboração do Daniel Garcia Lamas(https://github.com/danielamas)__  
 
 * __Visão AWS:__
 Através da dependência `quarkus-funqy-amazon-lambda` o __Quarkus__ vai entrgar scripts na pasta __target__ para que possa realizar o deploy do executável na AWS. Para maiores informações acesse: Deploy to AWS Lambda Custom (native) Runtime(https://quarkus.io/guides/amazon-lambda)
