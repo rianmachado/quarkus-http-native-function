@@ -19,7 +19,7 @@ O objetivo do Funqy é permitir que você escreva funções entre provedores de 
 * AWS CLI
 * Docker (Para gerar executável nativo)
 
-# Mostre um exemplo
+# Funqy suporta o tipo reativo Smallrye Mutiny e Uni.
 ```java
   @Funq("ReportPandemic")
 	public Uni<ResponseDTO> reportPandemic(RequestDTO request) {
@@ -27,7 +27,7 @@ O objetivo do Funqy é permitir que você escreva funções entre provedores de 
 				ResponseDTO.builder().otherInfo(request.getOtherInfo()).guid(UUID.randomUUID().toString()).build());
    }
 ```
-Funqy suporta o tipo reativo Smallrye Mutiny e Uni como um tipo de retorno.
+
 
 ## Start da aplicação(Modo desenvolvimento)
 Na raiz do projeto execute: `mvn compile quarkus:dev`
