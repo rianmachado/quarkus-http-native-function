@@ -44,7 +44,7 @@ Após execução do comando com sucesso, teremos um executável no diretório __
 ## E agora?
 
 * __Visão Azure:__
-Você encontrará na pasta __azure-config__ uma estrutura pré definida com Custom Handler, que é a forma de trabalhar com aplicativos executáveis na Azure. Para maiores informações acesse: [Azure Function](https://docs.microsoft.com/en-us/azure/azure-functions/create-first-function-vs-code-other?tabs=go%2Cmacos) 
+Você encontrará na pasta __azure-config__ uma estrutura pré definida com Custom Handler, que é a forma de trabalhar com aplicativos executáveis na Azure. Para maiores informações acesse: [Azure Function](https://docs.microsoft.com/en-us/azure/azure-functions/create-first-function-vs-code-other?tabs=go%2Cmacos).
 A documentação da Microsoft irá mostrar um exemplo em __GO__ mas não esqueça que ja temos um executável do nosso exemplo entregue pelo __Quarkus__. 
 Aconselho você conhecer os planos da Microsoft como por exemplo, __consumption e premium__. Isso vai te ajudar a escolher estratégias referente a cold start. Nosso exemplo oferece alguns scripts Azure para facilitar a vida.
 
