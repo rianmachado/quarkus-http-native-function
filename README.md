@@ -41,7 +41,6 @@ Muitas vezes, basta criar um executável Linux nativo para seu aplicativo Quarku
 `mvn clean package -Pnative -Dquarkus.native.container-build=true -Dquarkus.native.native-image-xmx=3G`
 Após execução do comando com sucesso, teremos um executável no diretório __azure-config__
 
-.
 ## E agora?
 
 * __Visão Azure:__
