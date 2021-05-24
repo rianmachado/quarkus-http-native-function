@@ -1,0 +1,30 @@
+COMANDOS KUBERNETS COM KNATIVE
+
+____________________________________________________________________________________________________________________________
+kn service describe <<helloworld-go>>
+ou
+kubectl get ksvc <<helloworld-go>>
+
+
+____________________________________________________________________________________________________________________________
+kn service create helloworld-go --image=docker.io/{username}/helloworld-go --env TARGET="Go Sample v1"
+kn service create demo-http-function --image=docker.io/rianmachado/demo-http-function:v1 --revision-name rev001 --namespace ars-dev
+
+____________________________________________________________________________________________________________________________
+kn service list
+
+____________________________________________________________________________________________________________________________
+kn service create demo-http-function --image=docker.io/rianmachado/demo-http-resteasy:v1 -n arsenal
+
+
+____________________________________________________________________________________________________________________________
+kn service delete helloworld-go
+
+
+
+kubectl port-forward $(kubectl -n istio-system get pod -l app=istio-ingressgateway \
+    -o jsonpath='{.items[0].metadata.name}') \
+    -n istio-system 8080:15000
+
+____________________________________________________________________________________________________________________________
+k get pods -w

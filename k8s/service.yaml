@@ -1,0 +1,16 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: demo-http-function
+  namespace: ars-dev
+spec:
+  template:
+    spec:
+      containers:
+      - image: docker.io/rianmachado/demo-http-function:v1
+        livenessProbe:
+          httpGet:
+            path: http://127.0.0.1:8022/health/live
+        readinessProbe:
+          httpGet:
+            path: http://127.0.0.1:8022/health/ready
